@@ -6,7 +6,7 @@ def auth_header(status="200 OK"):
     headers = (
         f"HTTP/1.1 {status}\r\n"
         "Content-Type: application/json\r\n"
-        "Cache-Control: no-cache\r\n"
+        #"Cache-Control: no-cache\r\n"
         "Access-Control-Allow-Origin: https://inquisitive-snickerdoodle-eb4bf2.netlify.app\r\n"
         "Access-Control-Allow-Methods: GET, POST, OPTIONS\r\n"
         "Access-Control-Allow-Headers: Content-Type\r\n"
