@@ -7,7 +7,7 @@ def auth_header(status="200 OK"):
         f"HTTP/1.1 {status}\r\n"
         "Content-Type: application/json\r\n"
         "Cache-Control: no-cache\r\n"
-        "Access-Control-Allow-Origin: https://yourfrontend.netlify.app\r\n"
+        "Access-Control-Allow-Origin: https://inquisitive-snickerdoodle-eb4bf2.netlify.app\r\n"
         "Access-Control-Allow-Methods: GET, POST, OPTIONS\r\n"
         "Access-Control-Allow-Headers: Content-Type\r\n"
         "Access-Control-Allow-Credentials: true\r\n"
@@ -54,7 +54,7 @@ def handle_client(client_sock):
         if method == 'OPTIONS':
             response(client_sock, method)
         elif path == '/set-cookie':
-            response(client_sock, method, '{"message":"Cookie set"}', session_id='test123', max_age='3600')
+            response(client_sock, method, '{"message":"Cookie set","cookie_id":"test123"}', session_id='test123', max_age='3600')
         elif path == '/check-cookie':
             cookie = headers.get('Cookie', 'No cookie received')
             response(client_sock, method, f'{{"cookie_received":"{cookie}"}}')
